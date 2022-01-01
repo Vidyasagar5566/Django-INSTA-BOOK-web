@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+
+<style>
+    body {
+  /*background-color:#e5e5e5;*/
+  background-image:url("{% static 'backgroundimg.webp' %}");
+}
+.button1{
+height:50px;
+width:100px;
+background-color:green;
+border-radius:10px;
+}
+.button1:hover {
+height:60px;
+width:120px;
+background-color:blue;
+border-radius:12px;
+}
+</style>
+
+<section style = "margin-top:150px;margin-bottom:150px;margin-left:45%;">
+
+    <form action = "main_page_L">
+        <button class = "button1" onclick = "submit">POST</button>
+    </form>
+
+</section>
+
+{% endblock %}

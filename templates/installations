@@ -1,0 +1,9 @@
+---> go to command prompt <---
+pip install django
+mkdir projects
+goto OS, --> users --> admins ---> projects (open)
+----------paste the 'facebookclone' file iside the projects
+now open the floder in pycharm community
+pip install pillow
+pip install mysql-connector-python
+

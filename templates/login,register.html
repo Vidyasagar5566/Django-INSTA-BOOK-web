@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login/register</title>
+	<style type="text/css">
+		body {
+  background-color:#e5e5e5;
+  background-image:url("{% static 'backgroundimg.webp' %}");
+}
+		.heading {
+	            font-size:65px;
+	            margin-left:25%;
+	            width:50%;
+	            margin-top:-7px;
+	            text-align:center;
+	            color:white;
+	            background-color:blue;
+	            border-radius:30px;
+	            opacity:0.5;
+                }
+
+        .login {
+	        height:340px;
+	        width:40%;
+	        margin-left:3%;
+	        background-color:gray;
+	        border-radius:10px;
+	        float:left;
+        }
+
+        .register {
+	        height:650px;
+	        width:40%;
+	        margin-left:3%;
+	        background-color:gray;
+	        border-radius:10px;
+	        float:left;
+        }
+
+        .button {
+ 	        height:40px;
+	        width:30%;
+	        background-color:green;
+	        color:white;
+	        text-align:center;
+	        font-size:110%;
+	        margin-left:34%;
+        }
+        .ending {
+	width:100%;
+	height:200px;
+	background-color:black;
+	border-radius:20px;
+
+
+}
+		
+	</style>
+</head>
+<body>
+
+	<h1 class = "heading">NITC-INSTA BOOK</h1>
+
+
+	<div>
+		{% for message in messages %}
+		   <h3 style = "text-align:center;color:black;font-size:30px">{{ message }}</h3>
+		{% endfor %}
+	</div>
+
+	<section class = "login">
+		<form action="main_page_L" method = "post">
+			{% csrf_token %}
+
+        <h1 style = "text-align:center;">Please Login Here..(if you already register)</h1>
+        <p style = "margin-left:10%;">User Name</p>
+        <p style = "text-align:center;"><input type="text" name = "input1" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+        <p style = "margin-left:10%;">PassWord</p>
+        <p style = "text-align:center;"><input type="text" name = "input2" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+
+            <button class = "button" onclick = "submit">login</button>
+		</form>
+
+    </section>
+
+
+
+
+	<h1 style = "width:2px;height:250px;background-color:black; float:left;margin-left:40px;"></h1>
+
+
+
+
+
+	<section class = "register">
+
+		<form action="main_page_R" method = "post">
+			{% csrf_token %}
+		<h1 style = "text-align:center;">Please Register Here..( if your fist time )</h1>
+			<p style = "margin-left:10%;">User_Name</p>
+			<p style = "text-align:center;"><input type="text" name = "input0" placeholder="Remember to LOGIN Again" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+		<p style = "margin-left:10%;">First_Name</p>
+		<p style = "text-align:center;"><input type="text" name = "input1" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+			<p style = "margin-left:10%;">Last_Name</p>
+		    <p style = "text-align:center;"><input type="text" name = "input2" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+		<p style = "margin-left:10%;">PassWord1</p>
+		<p style = "text-align:center;"><input type="text" name = "input3" placeholder="Remember to LOGIN Again" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+		<p style = "margin-left:10%;">PassWord2</p>
+		<p style = "text-align:center;"><input type="text" name = "input4" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+		<p style = "margin-left:10%;">E-Mailid</p>
+		<p style = "text-align:center;"><input type="text" name = "input5" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+
+
+			<button class = "button" onclick = "submit">Register</button>
+		</form>
+
+	</section>
+
+
+	<hr style = "height:2px;width:80%;background-color:yellow;margin-top:750px;">
+
+
+
+	<section class = "ending">
+
+		<h1 style = "color:white;opacity:0.4;opacity:0.12;margin-left:20px;">DES: Please Use This Site For NIT'C Official Postings And Chatting, You Can Raise Any Questions for Any Of Your Problems With NIT'C, ANY People Can Comment For Genuine Reasons </h1>
+
+		<h1 style = "margin-left:40%;color:white;opacity:0.4;opacity:0.12;">VIDYA SAGAR</h1>
+		<h1 style = "margin-left:37%;color:white;opacity:0.4;opacity:0.12;">Update Your Details EveryDay</h1>
+
+	</section>
+
+</body>
+</html>

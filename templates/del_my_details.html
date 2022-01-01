@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+
+	<style type="text/css">
+		body {
+  background-color:#e5e5e5;
+  background-image:url("{% static 'backgroundimg.webp' %}");
+}
+
+        .login {
+	        height:340px;
+	        width:40%;
+	        margin-left:30%;
+	        background-color:gray;
+	        border-radius:10px;
+	        float:left;
+        }
+
+        .button {
+ 	        height:40px;
+	        width:30%;
+	        background-color:green;
+	        color:white;
+	        text-align:center;
+	        font-size:110%;
+	        margin-left:34%;
+        }
+    </style>
+
+	<div>
+		{% for message in messages %}
+		   <h3 style = "text-align:center;color:black;font-size:30px">{{ message }}</h3>
+		{% endfor %}
+	</div>
+
+	<section class = "login">
+		<form action="del_my_details" method = "post">
+			{% csrf_token %}
+
+        <h1 style = "text-align:center;">Enter Your Use Name</h1>
+        <p style = "margin-left:10%;">User Name</p>
+        <p style = "text-align:center;"><input type="text" name = "input1" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+            <button class = "button" onclick = "submit">DELETE</button>
+		</form>
+
+    </section>
+
+    <h2 style = "text-align:center;color:black;font-size:30px;clear:left;">Keep Posting Pics Every Day</h2>
+
+
+{% endblock %}

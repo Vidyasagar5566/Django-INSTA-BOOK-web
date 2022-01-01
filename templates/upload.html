@@ -1,0 +1,104 @@
+{% load static %}
+<style>
+body {
+  /*background-color:#e5e5e5;*/
+  background-image:url("{% static 'backgroundimg.webp' %}");
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Uploadings</title>
+	<style type="text/css">
+		body {
+            /*background-color:#e5e5e5;*/
+            background-image:url("{% static 'backgroundimg.webp' %}");
+
+        }
+
+        .register {
+	        height:460px;
+	        width:40%;
+	        margin-left:30%;
+	        background-color:gray;
+	        border-radius:10px;
+	        float:left;
+        }
+
+        .button {
+ 	    height:40px;
+	    width:30%;
+	    background-color:green;
+	    color:white;
+	    text-align:center;
+	    font-size:110%;
+	    margin-left:34%;
+        }
+			.heading {
+	            font-size:80px;
+	            margin-left:25%;
+	            width:50%;
+	            margin-top:-7px;
+	            text-align:center;
+	            color:white;
+	            background-color:blue;
+	            border-radius:30px;
+	            opacity:0.5;
+                }
+    .ending {
+	width:100%;
+	height:200px;
+	background-color:black;
+	border-radius:20px;
+}
+
+	</style>
+</head>
+<body>
+
+	<h1 class = "heading">INSTA BOOK</h1>
+
+	<div>
+		{% for message in messages %}
+		   <h3 style = "text-align:center;color:black;font-size:30px">{{ message }}</h3>
+		{% endfor %}
+	</div>
+
+	<section class = "register">
+		<form action="main_page_U" method = "post" enctype = "multipart/form-data">
+			{% csrf_token %}
+		<h1 style = "text-align:center;">Please Upload Your Details Here</h1>
+		<p style = "margin-left:10%;">User Name</p>
+		<p style = "text-align:center;"><input type="text" name = "input1" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+		<p style = "margin-left:10%;">Profile Picture</p>
+		<p style = "text-align:center;"><input type="file" name = "input2" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+		<p style = "margin-left:10%;">Upload Picture</p>
+		<p style = "text-align:center;"><input type="file" name = "input3" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+		<p style = "margin-left:10%;">Caption</p>
+		<p style = "text-align:center;"><input type="text" name = "input4" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+
+
+
+		    <button class = "button" onclick = "submit">UPLOAD</button>
+		</form>
+
+		
+	</section>
+
+	<h2 style = "text-align:center;color:black;font-size:30px;clear:left;">Keep Posting Pics Every Day</h2>
+
+	<hr style = "height:2px;width:80%;background-color:yellow;margin-top:80px;">
+
+
+	<section class = "ending" style = "height:200px;">
+
+		<h1 style = "color:white;opacity:0.4;opacity:0.12;">DES: Please Use This Site For NIT'C Official Postings And Chatting, You Can Raise Any Questions for Any Of Your Problems With NIT'C, ANY People Can Comment For Genuine Reasons </h1>
+
+		<h1 style = "margin-left:40%;color:white;opacity:0.4;opacity:0.12;">VIDYA SAGAR</h1>
+		<h1 style = "margin-left:37%;color:white;opacity:0.4;opacity:0.12;">Update Your Details EveryDay</h1>
+
+	</section>
+
+</body>
+</html>

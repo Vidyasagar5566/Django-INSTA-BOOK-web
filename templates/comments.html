@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+
+	<style type="text/css">
+		body {
+  background-color:#e5e5e5;
+  background-image:url("{% static 'backgroundimg.webp' %}");
+}
+
+        .login {
+	        height:600px;
+	        width:40%;
+	        margin-left:30%;
+	        background-color:gray;
+	        border-radius:10px;
+	        float:left;
+        }
+
+        .button {
+ 	        height:40px;
+	        width:30%;
+	        background-color:green;
+	        color:white;
+	        text-align:center;
+	        font-size:110%;
+	        margin-left:34%;
+        }
+    </style>
+
+	<div>
+		{% for message in messages %}
+		   <h3 style = "text-align:center;color:black;font-size:30px">{{ message }}</h3>
+		{% endfor %}
+	</div>
+
+	<section class = "login">
+		<form action="post_comments" method = "post">
+			{% csrf_token %}
+
+        <h1 style = "text-align:center;">Enter You and user UserName</h1>
+        <p style = "margin-left:10%;">Your User Name</p>
+        <p style = "text-align:center;"><input type="text" name = "input1" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+			<p style = "margin-left:10%;">Your password</p>
+            <p style = "text-align:center;"><input type="text" name = "input2" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+			<p style = "margin-left:10%;">commenter User Name (mentioned above the picture in prev page)</p>
+            <p style = "text-align:center;"><input type="text" name = "input3" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+            <p style = "margin-left:10%;">Write Your Comment Here</p>
+            <p style = "text-align:center;"><input type="text" name = "input4" style = "text-align:center;font-size:25px; border-radius:5px;height:30px;width:80%;"></p>
+
+			<div style = "margin-left:50px;font-size:20px;margin-bottom:30px;margin-right:50px">You Cannot Delete Your Comment Until The Post Was Deleted By The User So Please Check Your Comment While Posting</div>
+
+			<button class = "button" onclick = "submit">POST</button>
+		</form>
+
+
+    </section>
+
+    <h2 style = "text-align:center;color:black;font-size:30px;clear:left;">Keep Posting Pics Every Day</h2>
+
+
+{% endblock %}
