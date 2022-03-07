@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<title>INSTA BOOK</title>
+	<style>
+body {
+  background-image:url("{% static '1567855.jpg' %}");
+}
+
+		.heading {
+	            font-size:105px;
+	            margin-left:5%;
+	            width:90%;
+	            margin-top:-7px;
+	            text-align:center;
+	            color:white;
+	            background-color:blue;
+	            border-radius:30px;
+	            opacity:0.5;
+                }
+
+
+.userdetails {
+	background-color:#99ccff;
+	height:150px;
+	width:101.3%;
+	border-radius:20px;
+	margin-left:-10px;
+	margin-top:-55px;
+}
+
+.username {
+	height:140px;
+	width:40%;
+	float:left;
+	margin-left:6%;
+	margin-top:2px;
+	overflow:auto;
+
+
+}
+
+.status {
+	background-color:white;
+	height:240px;
+	width:90%;
+	border-radius:20px;
+	margin-left:6%;
+	overflow:auto;
+	margin-top:-19px;
+	border:5px solid green;
+}
+
+
+.status-user {
+	height:150px;
+	border-radius:10px;
+	width:125px;
+	background-color:gray;
+	float:left;
+	margin-left:2%;
+	margin-top:10px;
+}
+
+.ending {
+	width:100%;
+	height:200px;
+	background-color:black;
+	border-radius:20px;
+}
+
+.button {
+ 	        height:40px;
+	        width:30%;
+	        background-color:green;
+	        color:white;
+	        text-align:center;
+	        font-size:110%;
+	        margin-left:34%;
+        }
+
+	</style>
+
+
+
+</head>
+
+<script>
+	if ( window.history.replaceState ) {
+	window.history.replaceState( null, null, window.location.href );
+	}
+</script>
+
+<body>
+
+
+
+	<h1 class = "heading">INSTA BOOK</h1>
+
+	{% block content %}
+
+
+	{% endblock %}
+
+
+
+    <hr style = "background-color:yellow;height:1px;width:70%;">
+
+	<section class = "ending" style = "height:200px;">
+
+
+		<h1 style = "margin-left:40%;color:white;opacity:0.01;">DES: ............. </h1>
+
+		<h1 style = "margin-left:40%;color:white;opacity:0.01;">....</h1>
+		<h1 style = "margin-left:37%;color:white;opacity:0.4;opacity:0.12;">Update Your Details EveryDay</h1>
+
+	</section>
+</body>
+</html>
